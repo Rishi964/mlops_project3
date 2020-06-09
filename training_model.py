@@ -51,7 +51,6 @@ num_pixels = x_train.shape[1] * x_train.shape[2]
 
 # In[ ]:
 
-
 # create model
 model = Sequential()
 
@@ -62,7 +61,8 @@ model.add(MaxPooling2D(pool_size = (5,5), strides = (3, 3)))
 
 # Fully connected layers (RELU)
 model.add(Flatten())
-model.add(Dense(units=5, input_dim=28*28, activation='relu'))
+model.add(Dense(units=25, input_dim=28*28, activation='relu'))
+
 
 # Softmax (for classification)
 model.add(Dense(units=10, activation='softmax'))
@@ -70,20 +70,15 @@ model.add(Dense(units=10, activation='softmax'))
 
 # In[ ]:
 
-
 from keras.optimizers import RMSprop
 
-
 # In[ ]:
-
 
 model.compile (optimizer=RMSprop(), loss='categorical_crossentropy', metrics=['accuracy'])
     
 print(model.summary())
 
-
 # In[ ]:
-
 
 # Training Parameters
 batch_size = 128
