@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[3]:
-
-
 import smtplib
 
 gmail_user = 'rishabhkhandelwal96499@gmail.com'
@@ -30,4 +27,3 @@ try:
     print('Email sent!')
 except:
     print('Something went wrong...')
-
